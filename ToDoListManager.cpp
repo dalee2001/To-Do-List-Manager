@@ -96,6 +96,9 @@ class todoList{
                 temp = temp -> next;
             }
 
+            // newline for menu choice to start on a different line.
+            cout << endl;
+            
             // Deallocate temp to free up memory. Dont want memory leaks.
             delete temp;       
         }
@@ -132,7 +135,10 @@ int main(){
             task.insert(userTask);
             break;
         case 2:
-
+            cout << "Enter a task name to remove: ";
+            cin.ignore();
+            getline(cin, userTask);
+            task.remove(userTask);
             break;
         case 3:
             task.display();
